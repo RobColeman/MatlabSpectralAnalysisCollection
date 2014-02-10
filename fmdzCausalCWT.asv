@@ -1,0 +1,46 @@
+function out = fmdzCausalCWT(data,sr,frequencies,cwtlength)
+%
+%   Usage: out = fmdzCausalCWT(data,sr,frequencies,cwtlength)
+%
+%
+%
+%
+%
+%
+%
+
+if size(data,1) > size(data,2)
+    data = data';
+end
+[nc,ns] = size(data);
+cwtsamps = cwtlength*sr;
+
+
+
+for e = 1:nc
+    edata = squeeze(data(e,:));
+    for f = frequencies
+        fftcwt = 
+        for t = 1:ns            
+            tlast  = t;
+            tfirst = tlast-cwtsamps+1;
+            if tfirst < 1
+                tfX = [zeros(1,abs(tfirst)+1)  edata(1:tlast)];
+            else
+                tfX = edata(tfirst:tlast);
+            end
+            
+            fftedata = fft(data);
+            
+            
+            
+
+            out(e,f,t) = tr;
+        end
+    end % frequencies
+end
+
+
+
+
+end % function
